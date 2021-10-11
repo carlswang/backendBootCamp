@@ -28,4 +28,16 @@ public class TaskService {
         taskList.remove(findTaskById(id).get(0));
         return taskList;
     }
+
+    public List<Task> updateTask(Task task) {
+        taskList.forEach(
+                tasks -> {
+                    if (tasks.getId() == task.getId()) {
+                        tasks.setName(task.getName());
+                        tasks.setDescribe(task.getDescribe());
+                    }
+                }
+        );
+        return taskList;
+    }
 }
