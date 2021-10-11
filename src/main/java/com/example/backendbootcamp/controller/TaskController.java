@@ -37,4 +37,9 @@ public class TaskController {
     public List<Task> updateTask(@RequestBody Task task) {
         return taskService.updateTask(task);
     }
+
+    @RequestMapping(path = "/tasks/{id}", method = RequestMethod.GET)
+    public List<Task> findTaskById(@PathVariable(name = "id") int id) {
+        return taskService.findTaskById(id);
+    }
 }
