@@ -24,4 +24,8 @@ public class TaskService {
         return taskList.stream().filter(task -> (task.getId() == id)).collect(Collectors.toList());
     }
 
+    public List<Task> deleteTaskById(int id) {
+        taskList.remove(findTaskById(id).get(0));
+        return taskList;
+    }
 }
