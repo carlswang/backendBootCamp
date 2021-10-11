@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class TaskController {
     private final TaskService taskService;
@@ -18,5 +20,10 @@ public class TaskController {
     @RequestMapping(path = "/task", method = RequestMethod.POST)
     public int saveTask(@RequestBody Task task) {
         return taskService.saveTask(task);
+    }
+
+    @RequestMapping(path = "/allTask", method = RequestMethod.GET)
+    public List<Task> findAllTask() {
+        return taskService.findAllTask();
     }
 }
