@@ -1,43 +1,36 @@
 package com.example.backendbootcamp.service;
 
-import com.example.backendbootcamp.repository.Task;
+import com.example.backendbootcamp.entity.Task;
+import com.example.backendbootcamp.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class TaskService {
-    private final List<Task> taskList = new ArrayList<>();
+    private TaskRepository taskRepository;
+
+    public TaskService(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
 
     public int saveTask(Task task) {
-        taskList.add(task);
-        return taskList.size();
+        return taskRepository.saveTask(task);
     }
 
     public List<Task> findAllTask() {
-        return taskList;
+        return taskRepository.findAllTask();
     }
 
     public List<Task> findTaskById(int id)  {
-        return taskList.stream().filter(task -> (task.getId() == id)).collect(Collectors.toList());
+        return taskRepository.findTaskById(id);
     }
 
     public List<Task> deleteTaskById(int id) {
-        taskList.remove(findTaskById(id).get(0));
-        return taskList;
+        return taskRepository.deleteTaskById(id);
     }
 
     public List<Task> updateTask(Task task) {
-        taskList.forEach(
-                tasks -> {
-                    if (tasks.getId() == task.getId()) {
-                        tasks.setName(task.getName());
-                        tasks.setDescribe(task.getDescribe());
-                    }
-                }
-        );
-        return taskList;
+        return taskRepository.updateTask(task);
     }
 }

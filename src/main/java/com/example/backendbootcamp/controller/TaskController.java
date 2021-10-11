@@ -1,6 +1,6 @@
 package com.example.backendbootcamp.controller;
 
-import com.example.backendbootcamp.repository.Task;
+import com.example.backendbootcamp.entity.Task;
 import com.example.backendbootcamp.service.TaskService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

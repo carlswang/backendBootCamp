@@ -1,4 +1,4 @@
-package com.example.backendbootcamp.repository;
+package com.example.backendbootcamp.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
