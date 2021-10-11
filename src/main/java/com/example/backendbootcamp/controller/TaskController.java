@@ -17,12 +17,12 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @RequestMapping(path = "/task", method = RequestMethod.POST)
+    @RequestMapping(path = "/tasks", method = RequestMethod.POST)
     public int saveTask(@RequestBody Task task) {
         return taskService.saveTask(task);
     }
 
-    @RequestMapping(path = "/allTask", method = RequestMethod.GET)
+    @RequestMapping(path = "/allTasks", method = RequestMethod.GET)
     public List<Task> findAllTask() {
         return taskService.findAllTask();
     }
