@@ -39,7 +39,7 @@ public class TaskController {
     }
 
     @RequestMapping(path = "/tasks/{id}", method = RequestMethod.GET)
-    public List<Task> findTaskById(@PathVariable(name = "id") int id) {
+    public Task findTaskById(@PathVariable(name = "id") int id) {
         return taskService.findTaskById(id);
     }
 }

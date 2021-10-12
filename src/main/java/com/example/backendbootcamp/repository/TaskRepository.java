@@ -20,12 +20,12 @@ public class TaskRepository {
         return taskList;
     }
 
-    public List<Task> findTaskById(int id)  {
-        return taskList.stream().filter(task -> (task.getId() == id)).collect(Collectors.toList());
+    public Task findTaskById(int id)  {
+        return taskList.stream().filter(task -> (task.getId() == id)).collect(Collectors.toList()).get(0);
     }
 
     public List<Task> deleteTaskById(int id) {
-        taskList.remove(findTaskById(id).get(0));
+        taskList.remove(findTaskById(id));
         return taskList;
     }
 
