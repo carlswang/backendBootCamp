@@ -82,7 +82,6 @@ public class TaskControllerTest {
                 .getResponse();
 
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-
         verify(taskService).saveTask(saveTasks);
     }
 }

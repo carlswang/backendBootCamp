@@ -5,12 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Builder
-public class Task {
-    private int id;
+public class User {
+    private Long id;
     private String name;
-    private String describe;
+    private String gender;
+    private String address;
 }
